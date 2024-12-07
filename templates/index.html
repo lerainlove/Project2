@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка погоды</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #003366;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #003366;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        button {
+            background: #007acc;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #005f99;
+        }
+
+        hr {
+            border: 1px solid #ccc;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Проверка погоды</h1>
+    <h2>Проверка погоды между двумя городами</h2>
+    <form action="/check_weather_by_cities" method="post">
+        <label for="start_city">Начальный город:</label>
+        <input type="text" id="start_city" name="start_city" placeholder="Введите название начального города" required>
+        <label for="end_city">Конечный город:</label>
+        <input type="text" id="end_city" name="end_city" placeholder="Введите название конечного города" required>
+        <button type="submit">Проверить погоду</button>
+    </form>
+    <hr />
+    <h2>Проверка погоды по координатам</h2>
+    <form action="/check_weather_by_coords" method="post">
+        <label for="latitude">Широта:</label>
+        <input type="text" id="latitude" name="latitude" placeholder="Введите широту" required>
+        <label for="longitude">Долгота:</label>
+        <input type="text" id="longitude" name="longitude" placeholder="Введите долготу" required>
+        <button type="submit">Проверить погоду</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода по координатам</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        p {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.3em;
+            color: #333;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        a:hover {
+            background-color: #005f99;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.1em;
+                padding: 15px;
+            }
+
+            a {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Погода по координатам</h1>
+    <p>
+        <span>Температура:</span> {{temperature}} °C<br>
+        <span>Влажность:</span> {{humidity}} %<br>
+        <span>Скорость ветра:</span> {{wind_speed}} км/ч<br>
+        <span>Осадки:</span> {{precipitation}} мм<br><br>
+        <span>Плохая погода:</span> {{is_bad}}
+    </p>
+    <a href="/">Вернуться на главную</a>
+</body>
+</html>
+

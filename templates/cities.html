@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты погоды</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #005f99;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+
+        .weather-section {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        a:hover {
+            background-color: #005f99;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            a {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Результаты погоды</h1>
+
+    <div class="weather-section">
+        <h2>Погода в {{ start_city }}</h2>
+        <p><strong>Температура:</strong> {{ start_weather.temperature }} °C</p>
+        <p><strong>Влажность:</strong> {{ start_weather.humidity }} %</p>
+        <p><strong>Скорость ветра:</strong> {{ start_weather.wind_speed }} км/ч</p>
+        <p><strong>Количество осадков:</strong> {{ start_weather.precipitation }} мм</p>
+        <p><strong>Погода благоприятная:</strong> {{ 'Нет' if end_is_bad else 'Да' }}</p>
+    </div>
+
+    <div class="weather-section">
+        <h2>Погода в {{ end_city }}</h2>
+        <p><strong>Температура:</strong> {{ end_weather.temperature }} °C</p>
+        <p><strong>Влажность:</strong> {{ end_weather.humidity }} %</p>
+        <p><strong>Скорость ветра:</strong> {{ end_weather.wind_speed }} км/ч</p>
+        <p><strong>Количество осадков:</strong> {{ end_weather.precipitation }} мм</p>
+        <p><strong>Погода благоприятная:</strong> {{ 'Нет' if end_is_bad else 'Да' }}</p>
+    </div>
+
+    <a href="/">Вернуться на главную</a>
+</body>
+</html>
